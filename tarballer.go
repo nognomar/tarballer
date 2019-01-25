@@ -20,7 +20,6 @@ func main() {
 	log.Println("Done.")
 }
 
-//noinspection GoUnhandledErrorResult
 func createTarball(source string, target string) {
 	source = strings.Replace(source, "\\", "/", -1)
 	if !strings.HasSuffix(source, "/") {
@@ -44,7 +43,6 @@ func createTarball(source string, target string) {
 	compressDir(source, tw, source)
 }
 
-//noinspection GoUnhandledErrorResult
 func compressDir(dirPath string, tw *tar.Writer, stripPath string) {
 	if !strings.HasSuffix(dirPath, "/") {
 		dirPath += "/"
@@ -67,7 +65,6 @@ func compressDir(dirPath string, tw *tar.Writer, stripPath string) {
 	}
 }
 
-//noinspection GoUnhandledErrorResult
 func compressFile(filePath string, tw *tar.Writer, file os.FileInfo, stripPath string) {
 	fr, err := os.Open(filePath)
 	checkErr(err)
